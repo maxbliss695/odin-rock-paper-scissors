@@ -51,4 +51,12 @@ function playRound() {
   }
 }
 
-playRound();
+function main() {
+  let currentRound = 0;
+  let totalRounds = 5;
+
+  for (let i = currentRound; i < totalRounds; i++) {
+    playRound();
+  }
+}
+main();
