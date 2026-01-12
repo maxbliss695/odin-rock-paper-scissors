@@ -38,13 +38,12 @@ function playRound() {
   const computerChoice = getComputerChoice();
   let result = "";
 
-  console.log(`Human choice: ${humanChoice}`);
-  console.log(`Computer choice: ${computerChoice}`);
+  alert(`Human choice: ${humanChoice} \nComputer choice: ${computerChoice}`);
 
   switch (true) {
     case humanChoice === computerChoice:
       {
-        result = console.log(
+        result = alert(
           `It's a tie! Neither player gets a point.\n\nHuman score: ${humanScore} \nComputer score: ${computerScore}`
         );
       }
@@ -54,7 +53,7 @@ function playRound() {
     case humanChoice === CHOICES.SCISSORS && computerChoice === CHOICES.ROCK:
       {
         humanScore++;
-        result = console.log(
+        result = alert(
           `You win! ${humanChoice} beats ${computerChoice} \n\nHuman score: ${humanScore} \nComputer score: ${computerScore}`
         );
       }
@@ -62,7 +61,7 @@ function playRound() {
     default:
       {
         computerScore++;
-        result = console.log(
+        result = alert(
           `You lose! ${computerChoice} beats ${humanChoice} \n\nHuman score: ${humanScore} \nComputer score: ${computerScore}`
         );
       }
