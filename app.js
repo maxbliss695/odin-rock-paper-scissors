@@ -62,8 +62,30 @@ function playRound() {
     default:
       {
         computerScore++;
-        console.log(
+        result = console.log(
           `You lose! ${computerChoice} beats ${humanChoice} \n\nHuman score: ${humanScore} \nComputer score: ${computerScore}`
+        );
+      }
+      break;
+  }
+}
+
+function showFinalResults() {
+  switch (true) {
+    case humanScore === computerScore:
+      {
+        result = alert("Whoa, the game has ended in a tie!");
+      }
+      break;
+    case humanScore > computerScore:
+      {
+        result = alert("Congratulations, you won the game!");
+      }
+      break;
+    default:
+      {
+        result = alert(
+          "Oh no! Unfortunately, the computer bested you this game."
         );
       }
       break;
@@ -93,6 +115,7 @@ function main() {
   for (let i = currentRound; i < totalRounds; i++) {
     playRound();
     if (i + 1 === totalRounds) {
+      showFinalResults();
       resetGame();
     }
   }
