@@ -70,12 +70,31 @@ function playRound() {
   }
 }
 
+function resetGame() {
+  console.clear();
+  humanScore = 0;
+  computerScore = 0;
+
+  const confirmReset = confirm(
+    "The game has ended. Would you like to play again?"
+  );
+
+  if (confirmReset === false) {
+    alert("Thanks for stopping by, see you next time.");
+  } else {
+    main();
+  }
+}
+
 function main() {
   let currentRound = 0;
   let totalRounds = 5;
 
   for (let i = currentRound; i < totalRounds; i++) {
     playRound();
+    if (i + 1 === totalRounds) {
+      resetGame();
+    }
   }
 }
 main();
