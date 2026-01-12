@@ -7,8 +7,27 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  let humanInput = prompt("Please choose: rock, paper, or scissors.");
-  return humanInput;
+  do {
+    let humanChoice = prompt("Please choose: rock, paper, or scissors.");
+    if (humanChoice == null) {
+      getHumanChoice();
+    } else if (humanChoice === "") {
+      alert("Prompt was left empty. Please make a choice.");
+      getHumanChoice();
+    } else {
+      humanChoice = humanChoice.toLocaleLowerCase().trim();
+      if (choiceValue.includes(humanChoice)) {
+        return humanChoice;
+      } else {
+        humanChoice = prompt(
+          "That was an invalid choice. \n\nPlease choose: rock, paper, or scissors."
+        )
+          .toLocaleLowerCase()
+          .trim();
+        return humanChoice;
+      }
+    }
+  } while (true);
 }
 
 let humanScore = 0;
