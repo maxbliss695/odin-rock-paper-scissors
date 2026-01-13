@@ -1,5 +1,8 @@
 const CHOICES = { ROCK: "rock", PAPER: "paper", SCISSORS: "scissors" };
 const choiceValue = Object.values(CHOICES);
+let humanScore = 0;
+let computerScore = 0;
+let result = "";
 
 function getComputerChoice() {
   const computerChoice = Math.floor(Math.random() * choiceValue.length);
@@ -30,13 +33,9 @@ function getHumanChoice() {
   } while (true);
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound() {
   const humanChoice = getHumanChoice();
   const computerChoice = getComputerChoice();
-  let result = "";
 
   alert(`Human choice: ${humanChoice} \nComputer choice: ${computerChoice}`);
 
